@@ -25,7 +25,7 @@ export default function Akads() {
               <Container>
                 <Box>
                   <Container>
-                    <center> <h1> AkadsPH </h1></center>
+                    <center className='top'> <h1> AkadsPH </h1></center>
                     
                   
                   <Grid container spacing={2} align='center' mt={2}>
