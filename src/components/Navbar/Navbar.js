@@ -7,6 +7,9 @@ import { ThemeContext } from '../../contexts/theme'
 import { projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
 import { Link } from "react-router-dom";
+import Container from '@mui/material/Container';
+import * as React from 'react';
+
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext)
@@ -15,11 +18,29 @@ const Navbar = () => {
   const toggleNavList = () => setShowNavList(!showNavList)
 
   return (
+    <React.Fragment>
+    <Container>
+    <a
+      href='/#/'
+      onClick={toggleNavList}
+      // className='link link--nav'
+    >
+      <div className='nav__list-item brand-logo'>
+        Adrienne Soliven
+      </div>
+      
+    </a>
+    </Container>
     <nav className='center nav'>
+     
       <ul
         style={{ display: showNavList ? 'flex' : null }}
         className='nav__list'
       >
+        <li className='nav__list-item'>
+          
+        </li>
+
         {projects.length ? (
           // <Link to={'/#projects'}>
             <li className='nav__list-item'>
@@ -75,6 +96,7 @@ const Navbar = () => {
         {showNavList ? <CloseIcon /> : <MenuIcon />}
       </button>
     </nav>
+    </React.Fragment>
   )
 }
 
