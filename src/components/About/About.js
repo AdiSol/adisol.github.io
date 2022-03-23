@@ -15,7 +15,7 @@ const About = () => {
     <div className='about center'>
       {name && (
         <h1>
-          Hi there, I'm Adrienne!👋
+          Hi there, I'm Adrienne! <span className='waving-hand'>👋</span>
           {/* <ReactRotatingText items={items} eraseMode={'overwrite'} emptyPause={0} pause={greeting_duration} cursor={false}/> */}
         </h1>
       )}
