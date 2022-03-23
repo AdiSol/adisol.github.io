@@ -30,16 +30,7 @@ const projects = [
     image: './animosched_logo.png',
     link: '/AnimoSched',
   },
-  {
-    name: 'Akads PH',
-    description:
-      'Akads is an all-in-one online platform that helps parents find tutors for their Grade School and High School kids.',
-    stack: ['Frontend Dev', 'UX Research'],
-    youtubeVid: 'https://www.youtube.com/watch?v=AZuWV_sB53k',
-    livePreview: 'https://akadsph.com',
-    image: './akads_logo.png',
-    link: '/AkadsPH',
-  },
+  
   {
     name: 'CoDo',
     description:
@@ -48,11 +39,23 @@ const projects = [
     image: './codo_logo.png',
     link: '/CoDo',
   },
+  
+  {
+    name: 'Akads PH',
+    description:
+      'Akads is an all-in-one online platform that helps parents find tutors for their kids.',
+    stack: ['Frontend Dev', 'UX Research'],
+    youtubeVid: 'https://www.youtube.com/watch?v=AZuWV_sB53k',
+    livePreview: 'https://akadsph.com',
+    image: './akads_logo.png',
+    link: '/AkadsPH',
+  },
   {
     name: 'TranspoDesire 2.0',
     description:
       'Transport desirability index visualization web application to aid in the assessment and planning of transport systems in the Philippines.',
     stack: ['Frontend Dev'],
+    image: './transpodesire_logo.png',
     link: '/TranspoDesire',
   },
   

@@ -6,6 +6,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import { ThemeContext } from '../../contexts/theme'
 import { projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [{ themeName, toggleTheme }] = useContext(ThemeContext)
@@ -20,18 +21,20 @@ const Navbar = () => {
         className='nav__list'
       >
         {projects.length ? (
-          <li className='nav__list-item'>
-            <a
-              href='#projects'
-              onClick={toggleNavList}
-              className='link link--nav'
-            >
-              Projects
-            </a>
-          </li>
+          // <Link to={'/#projects'}>
+            <li className='nav__list-item'>
+              <a
+                href='/#projects'
+                onClick={toggleNavList}
+                className='link link--nav'
+              >
+                Projects
+              </a>
+            </li>
+          // </Link>
         ) : null}
 
-        <li className='nav__list-item'>
+        {/* <li className='nav__list-item'>
           <a
             href='#skills'
             onClick={toggleNavList}
@@ -39,12 +42,12 @@ const Navbar = () => {
           >
             Skills
           </a>
-        </li>
+        </li> */}
 
         {contact.email ? (
           <li className='nav__list-item'>
             <a
-              href='#contact'
+              href='/#contact'
               onClick={toggleNavList}
               className='link link--nav'
             >
