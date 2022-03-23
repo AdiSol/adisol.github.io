@@ -5,12 +5,20 @@ import Typography from '@mui/material/Typography';
 import { spacing } from '@mui/system';
 import Grid from '@mui/material/Grid';
 import Carousel from 'react-material-ui-carousel';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 export default function TranspoDesire() {
+
+    const theme = createTheme({
+      typography: {
+        fontFamily: 'Poppins, sans-serif',
+      }
+    })
 
     let mockup = ['/TranspoDesire/create_survey.png', '/TranspoDesire/preview_data.png', '/TranspoDesire/equation.png']
 
     return(
+      <ThemeProvider theme={theme}>
         <React.Fragment>
           <Container>
             <Box mx={3}>
@@ -18,7 +26,7 @@ export default function TranspoDesire() {
               <Container>
                 <Box>
                   <Container>
-                  <Typography variant="h1" component="h2" align="center">TranspoDesire</Typography>
+                  <Typography variant="h1" component="h4" align="center">TranspoDesire</Typography>
                   {/* <Grid container spacing={2} align='center' mt={2}>
                     <Grid item xs={0} md={2}>
                     </Grid>
@@ -41,7 +49,7 @@ export default function TranspoDesire() {
                       As the frontend developer, I implemented the login page and the admin page that the engineers will be using. 
                     </Typography>
 
-                    <Typography variant="h2" gutterBottom mt={2}>
+                    <Typography variant="h4" gutterBottom mt={2}>
                       The Tool
                     </Typography>
 
@@ -66,7 +74,7 @@ export default function TranspoDesire() {
                     </Grid>
 
 
-                    <Typography variant="h2" gutterBottom mt={2}>
+                    <Typography variant="h4" gutterBottom mt={2}>
                       Admin Page
                     </Typography>
 
@@ -109,7 +117,7 @@ export default function TranspoDesire() {
                     </Grid>
                    
 
-                    <Typography variant="h2" gutterBottom mt={2}>
+                    <Typography variant="h4" gutterBottom mt={2}>
                       Samples of the Admin Page
                     </Typography>
 
@@ -142,5 +150,6 @@ export default function TranspoDesire() {
             </Box>
           </Container>
         </React.Fragment>
+      </ThemeProvider>
     )
 }

@@ -5,11 +5,19 @@ import Typography from '@mui/material/Typography';
 import { spacing } from '@mui/system';
 import Grid from '@mui/material/Grid';
 import Carousel from 'react-material-ui-carousel';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import LaunchIcon from '@material-ui/icons/Launch'
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 export default function Akads() {
-
+  const theme = createTheme({
+    typography: {
+      fontFamily: 'Poppins, sans-serif',
+    }
+  })
 
     return(
+      <ThemeProvider theme={theme}>
         <React.Fragment>
           <Container>
             <Box mx={3}>
@@ -17,7 +25,9 @@ export default function Akads() {
               <Container>
                 <Box>
                   <Container>
-                  <Typography variant="h1" component="h2" align="center">AkadsPH</Typography>
+                    <center> <h1> AkadsPH </h1></center>
+                    
+                  
                   <Grid container spacing={2} align='center' mt={2}>
                     <Grid item xs={0} md={2}>
                     </Grid>
@@ -32,8 +42,28 @@ export default function Akads() {
                   </Container>
 
                   <Box>
+                    
+                    <Box mb={1}>
+                      <a
+                        href='https://akadsph.com'
+                        aria-label='live preview'
+                        className='link link--icon'
+                        style={{margiRight: '40px'}}
+                      >
+                        Website <LaunchIcon />
+                      </a>
+                    </Box>
+                    
+
+                    <a
+                      href='https://www.youtube.com/watch?v=AZuWV_sB53k'
+                      aria-label='youtube vid'
+                      className='link link--icon'
+                    >
+                      Video <YouTubeIcon />
+                    </a>
                     <Typography variant="body1" gutterBottom mt={2}>
-                      AkadsPH is an online tutor matching platform. I worked as a React.js frontend developer and the lead UX researcher in this project. We were a team of 4 developers. The website can be accessed through this link:  https://www.akadsph.com/ .
+                      AkadsPH is an online tutor matching platform. I worked as a <span style={{fontWeight: 'bold'}}>React.js frontend developer</span> and the <span style={{fontWeight: 'bold'}}>lead UX researcher</span> in this project. We were a team of 4 developers. The website can be accessed <a className='link link--icon' href='https://www.akadsph.com/'>here</a>.
                     </Typography>
 
                     <Typography variant="body1" gutterBottom mt={2}>
@@ -116,5 +146,6 @@ export default function Akads() {
             </Box>
           </Container>
         </React.Fragment>
+      </ThemeProvider>
     )
 }

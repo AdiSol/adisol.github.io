@@ -5,14 +5,24 @@ import Typography from '@mui/material/Typography';
 import { spacing } from '@mui/system';
 import Grid from '@mui/material/Grid';
 import Carousel from 'react-material-ui-carousel';
+import LaunchIcon from '@material-ui/icons/Launch'
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 export default function CoDo() {
 
+    const theme = createTheme({
+      typography: {
+        fontFamily: 'Poppins, sans-serif',
+      }
+    })
+
+   
     let v1 = ['/CoDo/v1_1.png', '/CoDo/v1_2.png', '/CoDo/v1_3.png', '/CoDo/v1_4.png']
     let v2 = ['/CoDo/v2_1.png', '/CoDo/v2_2.png']
     let v3 = ['/CoDo/v3_1.png', '/CoDo/v3_2.png', '/CoDo/v3_3.png', '/CoDo/v3_4.png']
     
     return(
+      <ThemeProvider theme={theme}>
         <React.Fragment>
           <Container>
             <Box mx={3}>
@@ -20,7 +30,7 @@ export default function CoDo() {
               <Container>
                 <Box>
                   <Container>
-                  <Typography variant="h1" component="h2" align="center">CoDo</Typography>
+                  <Typography variant="h1" component="h4" align="center">CoDo</Typography>
                   <Grid container spacing={2} align='center' mt={2}>
                     <Grid item xs={0} md={2}>
                     </Grid>
@@ -35,6 +45,14 @@ export default function CoDo() {
                   </Container> 
 
                   <Box>
+                    <a
+                      href='https://adisol.github.io/codo-app/'
+                      aria-label='live preview'
+                      className='link link--icon'
+                      style={{margiRight: '40px'}}
+                    >
+                      Live Demo <LaunchIcon />
+                    </a>
                     <Typography variant="body1" gutterBottom mt={2}>
                       CoDo is a personal project that we worked on as a team of four
                     </Typography>
@@ -68,7 +86,7 @@ export default function CoDo() {
                     </Typography>
 
                     <Box my={2}>
-                      <Typography variant="h2" component="h2">Research</Typography>
+                      <Typography variant="h4" component="h4">Research</Typography>
                       
                       <Typography variant="body1" gutterBottom mt={2}>
                       We interviewed 6 condo residents that were composed of students. Their problems varied greatly. These include:
@@ -86,7 +104,7 @@ export default function CoDo() {
                         </Box>
                     </Typography>
 
-                    <Typography variant="h2" gutterBottom mt={2}>
+                    <Typography variant="h4" gutterBottom mt={2}>
                       Storyboards
                     </Typography>
 
@@ -94,11 +112,11 @@ export default function CoDo() {
                       Some of the sample storyboards I made were based on some of the problems of the users. The first storyboard shows the context of the problem and the second one shows one of our proposed solutions
                     </Typography>
 
-                    <Typography variant="body1" gutterBottom mt={2}>
+                    <Typography variant="body1" gutterBottom mt={2} sx={{ fontWeight: 'bold' }} align='center'>
                       Problem
                     </Typography>
 
-                    <Grid container spacing={2} align='center' mt={2}>
+                    <Grid container spacing={2} align='center' mt={2} >
                       <Grid item xs={0} md={1}>
                       </Grid>
                       <Grid item xs={12} md={10}>
@@ -108,7 +126,8 @@ export default function CoDo() {
                       </Grid>
                     </Grid>
 
-                    <Typography variant="body1" gutterBottom mt={2}>
+                    <br/>
+                    <Typography variant="body1" gutterBottom mt={2} sx={{ fontWeight: 'bold' }} align='center'>
                       Proposed Solution
                     </Typography>
 
@@ -122,7 +141,7 @@ export default function CoDo() {
                       </Grid>
                     </Grid>
 
-                    <Typography variant="h2" gutterBottom mt={2}>
+                    <Typography variant="h4" gutterBottom mt={2}>
                       Design, Test, Iterate
                     </Typography>
 
@@ -130,33 +149,39 @@ export default function CoDo() {
                       After going through the insights, we chose to narrow down the problems to bill and utility services as these were common and frequent activities. We created prototypes using GravitDesigner and Invision. We had 3 rounds of iterations to evaluate and improve our designs. There were a total of 25 participants. 
                     </Typography>
 
-                    <Typography variant="h6" gutterBottom mt={2}>
+                    <Typography variant="h6" gutterBottom mt={2} align='center'>
                       Version 1
                     </Typography>
 
                     <Carousel autoPlay={true} indicators={true}>
                       {v1.map(img => 
+                        <center>
                           <img src={img} style={{height:'50vh'}} />
+                        </center>
                       )}
                     </Carousel>
 
-                    <Typography variant="h6" gutterBottom mt={2}>
+                    <Typography variant="h6" gutterBottom mt={2} align='center'>
                       Version 2
                     </Typography>
 
-                    <Carousel autoPlay={true} indicators={true}>
+                    <Carousel autoPlay={true} indicators={true} align='center'>
                       {v2.map(img => 
+                        <center>
                           <img src={img} style={{height:'50vh'}} />
+                        </center>
                       )}
                     </Carousel>
 
-                    <Typography variant="h6" gutterBottom mt={2}>
+                    <Typography variant="h6" gutterBottom mt={2} align='center'>
                       Version 3
                     </Typography>
 
                     <Carousel autoPlay={true} indicators={true}>
                       {v3.map(img => 
+                        <center>
                           <img src={img} style={{height:'50vh'}} />
+                        </center>
                       )}
                     </Carousel>
 
@@ -165,14 +190,22 @@ export default function CoDo() {
                     </Typography>
 
                     <Typography variant="body1" gutterBottom mt={2}>
-                      An offline InVision version of the final design can be interacted through this link: https://adisol.github.io/codo-app/
+                      An offline InVision version of the final design can be interacted through the link. 
+                      <a
+                        href='https://adisol.github.io/codo-app/'
+                        aria-label='live preview'
+                        className='link link--icon'
+                        style={{margiRight: '40px'}}
+                      >
+                        <LaunchIcon />
+                      </a>
                     </Typography>
 
                     <Grid container spacing={2} align='center' mt={2}>
                       <Grid item xs={0} md={1}>
                       </Grid>
                       <Grid item xs={12} md={10}>
-                        <img src='/CoDo/codo_final.png' style={{width:"90%"}}></img>
+                        <img src='/CoDo/codo_final.png' style={{width:"50%"}}></img>
                       </Grid>
                       <Grid item xs={0} md={1}>
                       </Grid>
@@ -185,5 +218,6 @@ export default function CoDo() {
             </Box>
           </Container>
         </React.Fragment>
+      </ThemeProvider>
     )
 }

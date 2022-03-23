@@ -5,8 +5,17 @@ import Typography from '@mui/material/Typography';
 import { spacing } from '@mui/system';
 import Grid from '@mui/material/Grid';
 import Carousel from 'react-material-ui-carousel';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import DescriptionIcon from '@material-ui/icons/Description';
+
 
 export default function AnimoSched() {
+
+    const theme = createTheme({
+      typography: {
+        fontFamily: 'Poppins, sans-serif',
+      }
+    })
 
     let personas = ['/AnimoSched/personas/meticulous_mike.png', '/AnimoSched/personas/delayed_denny.png', '/AnimoSched/personas/busy_bea.png', '/AnimoSched/personas/clique_cara.png', '/AnimoSched/personas/easygoing_elliot.png', '/AnimoSched/personas/efficient_ericka.png']
     let v1 = ['/AnimoSched/v1/v1_landing.png', '/AnimoSched/v1/v1_search.png', '/AnimoSched/v1/v1_preferences.png', '/AnimoSched/v1/v1_create.png', '/AnimoSched/v1/v1_save.png']
@@ -15,13 +24,14 @@ export default function AnimoSched() {
     let mvp = ['/AnimoSched/mvp/mvp_flowchart.png', '/AnimoSched/mvp/mvp_courses.png', '/AnimoSched/mvp/mvp_save.png', '/AnimoSched/mvp/mvp_friends1.png', '/AnimoSched/mvp/mvp_friends2.png']
 
     return(
+      <ThemeProvider theme={theme}>
         <React.Fragment>
           <Container>
             <Box mx={3}>
               <Container>
                 <Box>
                   <Container>
-                  <Typography variant="h1" component="h2" align="center">AnimoSched</Typography>
+                  <Typography variant="h1" component="h4" align="center">AnimoSched</Typography>
                   <Grid container spacing={2} align='center' mt={2}>
                     <Grid item xs={0} md={2}>
                     </Grid>
@@ -38,7 +48,7 @@ export default function AnimoSched() {
                   </Container>
                   <div className='intro'>
                     <Typography variant="body1" gutterBottom mt={2}>
-                      AnimoSched is a research and software engineer project. My roles in the project were lead UX researcher and React.js frontend developer. We were a team of 4 people.
+                      AnimoSched is a research and software engineer project. My roles in the project were <span style={{fontWeight: 'bold'}}>lead UX</span> researcher and <span style={{fontWeight: 'bold'}}>React.js frontend developer</span>. We were a team of 4 people.
                     </Typography>
                     <Typography variant="body1" gutterBottom mt={2}>
                       As a lead UX researcher, I designed all of the user tests and protocols that were followed by our team. I also handled the majority of the user interview by acting as the main moderator. I also led the compilation of insights and subsequent analyses.
@@ -70,7 +80,7 @@ export default function AnimoSched() {
 
               <Container >
                 <Box my={2}>
-                  <Typography variant="h2" component="h2">Research</Typography>
+                  <Typography variant="h4" component="h4">Research</Typography>
                   <Typography variant="body1" gutterBottom mt={2}>
                     Before starting anything, we wanted to understand whether the problem we want to address is an actual problem at all. In addition, we wanted to what exactly are the sentiments of students when it comes to schedule making.
                   </Typography>
@@ -111,7 +121,7 @@ export default function AnimoSched() {
 
               <Container >
                 <Box my={2}>
-                  <Typography variant="h2" component="h2">Insights</Typography>
+                  <Typography variant="h4" component="h4">Insights</Typography>
                   <Typography variant="body1" gutterBottom mt={2}>
                     We used affinity diagrams to organize all the data that we collected and consolidated insight from it.
                   </Typography>
@@ -143,7 +153,9 @@ export default function AnimoSched() {
                   </Grid> */}
                   <Carousel autoPlay={true} indicators={true}>
                       {personas.map(persona => 
+                        <center>
                           <img src={persona} style={{height:'50vh'}} />
+                        </center>
                       )}
                   </Carousel>
                   <Typography variant="h6" gutterBottom mt={2}>
@@ -182,44 +194,55 @@ export default function AnimoSched() {
             
               <Container >
                 <Box my={2}>
-                  <Typography variant="h2" component="h2">Design, Test, Iterate</Typography>
+                  <Typography variant="h4" component="h4">Design, Test, Iterate</Typography>
+                  <Typography variant="h6" gutterBottom mt={2}>
+                    Prototypes
+                  </Typography>
                   <Typography variant="body1" gutterBottom mt={2}>
                   Despite our minimal experience with design at the time, we were able to create usable mockups which proved to be valuable during the implementation stage.
                   </Typography>
 
-                  <Typography variant="h6" gutterBottom mt={2}>
+                  <Typography variant="h6" gutterBottom mt={2} align='center'>
                     Version 1
                   </Typography>
                   <Carousel autoPlay={true} indicators={true}>
                       {v1.map(image => 
+                        <center>
                           <img src={image} style={{height:'45vh'}} />
+                        </center>
                       )}
                   </Carousel>
 
-                  <Typography variant="h6" gutterBottom mt={2}>
+                  <Typography variant="h6" gutterBottom mt={2} align='center'>
                     Version 2
                   </Typography>
                   <Carousel autoPlay={true} indicators={true}>
                       {v2.map(image => 
+                        <center>
                           <img src={image} style={{height:'50vh'}} />
+                        </center>
                       )}
                   </Carousel>
 
-                  <Typography variant="h6" gutterBottom mt={2}>
+                  <Typography variant="h6" gutterBottom mt={2} align='center'>
                     Version 3
                   </Typography>
                   <Carousel autoPlay={true} indicators={true}>
                       {v3.map(image => 
+                        <center>
                           <img src={image} style={{height:'50vh'}} />
+                        </center>
                       )}
                   </Carousel>
 
-                  <Typography variant="h6" gutterBottom mt={2}>
+                  <Typography variant="h4" gutterBottom mt={2}>
                    Minimum Viable Product
                   </Typography>
                   <Carousel autoPlay={true} indicators={true}>
                       {mvp.map(image => 
-                          <img src={image} style={{height:'45vh'}} />
+                          <center>
+                            <img src={image} style={{height:'45vh'}} />
+                          </center>
                       )}
                   </Carousel>
                   
@@ -237,11 +260,11 @@ export default function AnimoSched() {
                   We used the following metrics to evaluate mental effort, stress, emotions, and usability:
                       <Box ml={3}>
                         <ul>
-                          <li>• User Experience Questionaire (UEQ)</li>
-                          <li>• NASA TLX</li>
-                          <li>• Positive and Negative Affect Schedule (PANAS)</li>
-                          <li>• Subjective Mental Effort Questionaire (SMEQ)</li>
-                          <li>• Survey Questions</li>
+                          <li style={{marginBottom: '10px'}}>• <a className='link link--icon' href='https://www.ueq-online.org/'>User Experience Questionaire (UEQ)</a></li>
+                          <li style={{marginBottom: '10px'}}>• <a className='link link--icon' href='https://humansystems.arc.nasa.gov/groups/tlx/'>NASA Task Load Index (NASA-TLX)</a></li>
+                          <li style={{marginBottom: '10px'}}>• <a className='link link--icon' href='https://doi.apa.org/doiLanding?doi=10.1037%2F0022-3514.54.6.1063'>Positive and Negative Affect Schedule (PANAS)</a></li>
+                          <li style={{marginBottom: '10px'}}>• <a className='link link--icon' href='https://measuringu.com/papers/Sauro_Dumas_CHI2009.pdf'>Subjective Mental Effort Questionaire (SMEQ)</a></li>
+                          <li style={{marginBottom: '10px'}}>• Survey Questions</li>
                         </ul>
                       </Box>
                   </Typography>
@@ -252,13 +275,19 @@ export default function AnimoSched() {
 
               <Container >
                 <Box my={2}>
-                  <Typography variant="h2" component="h2">Conclusion</Typography>
+                  <Typography variant="h4" component="h4">Conclusion</Typography>
                   <Typography variant="body1" gutterBottom mt={2}>
                     Overall, AnimoSched showed significant improvements in decision-making, cognitive load, stress, and the satisfaction of students with schedule making. A research paper was written for this project and was published in CHI 2021, a top-tier HCI conference. A more detailed discussion can be found in the paper.
+                    <a
+                    href='https://comet.dlsu.edu.ph/files/2021manzano_sat_scheduler_chi.pdf'
+                    aria-label='paper'
+                    className='link link--icon'
+                    >
+                      <DescriptionIcon/>
+                    </a>
                   </Typography>
-                  <div>
-                  https://comet.dlsu.edu.ph/files/2021manzano_sat_scheduler_chi.pdf
-                  </div>
+                  
+
                 </Box>
               </Container>
             
@@ -266,6 +295,7 @@ export default function AnimoSched() {
             </Box>
           </Container>
         </React.Fragment>
+      </ThemeProvider>
     )
    
 };

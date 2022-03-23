@@ -15,7 +15,7 @@ import TranspoDesire from './pages/TranspoDesire';
 import CoDo from './pages/CoDo';
 import { render } from "react-dom";
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -28,7 +28,7 @@ const App = () => {
       <Header />
 
       {/* <Home/> */}
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/AnimoSched" element={<AnimoSched />}/>
@@ -36,7 +36,7 @@ const App = () => {
           <Route path="/TranspoDesire" element={<TranspoDesire />}/>
           <Route path="/CoDo" element={<CoDo />}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
      
       <ScrollToTop />
       <Footer />
