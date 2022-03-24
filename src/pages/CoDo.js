@@ -120,7 +120,7 @@ export default function CoDo() {
                       <Grid item xs={0} md={1}>
                       </Grid>
                       <Grid item xs={12} md={10}>
-                        <img src='/CoDo/Storyboard1.png' style={{width:"100%"}}></img>
+                        <img src='/CoDo/storyboard1.png' style={{width:"100%"}}></img>
                       </Grid>
                       <Grid item xs={0} md={1}>
                       </Grid>
@@ -135,7 +135,7 @@ export default function CoDo() {
                       <Grid item xs={0} md={1}>
                       </Grid>
                       <Grid item xs={12} md={10}>
-                        <img src='/CoDo/Storyboard2.png' style={{width:"100%"}}></img>
+                        <img src='/CoDo/storyboard2.png' style={{width:"100%"}}></img>
                       </Grid>
                       <Grid item xs={0} md={1}>
                       </Grid>
