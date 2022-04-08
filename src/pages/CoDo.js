@@ -16,6 +16,21 @@ export default function CoDo() {
       }
     })
 
+    theme.typography.h1 = {
+      fontSize: '1.2rem',
+      '@media (min-width:600px)': {
+        fontSize: '1.5rem',
+      },
+      [theme.breakpoints.up('md')]: {
+        fontSize: '2.4rem',
+      },
+    }
+
+    const openInNewTab = (url) => {
+      const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+      if (newWindow) newWindow.opener = null
+    }
+
    
     let v1 = ['/CoDo/v1_1.png', '/CoDo/v1_2.png', '/CoDo/v1_3.png', '/CoDo/v1_4.png']
     let v2 = ['/CoDo/v2_1.png', '/CoDo/v2_2.png']
@@ -46,10 +61,10 @@ export default function CoDo() {
 
                   <Box>
                     <a
-                      href='https://adisol.github.io/codo-app/'
+                      onClick={() => openInNewTab('https://adisol.github.io/codo-app/')}
                       aria-label='live preview'
                       className='link link--icon'
-                      style={{margiRight: '40px'}}
+                      style={{margiRight: '40px', display: "table-cell"}}
                     >
                       Live Demo <LaunchIcon />
                     </a>

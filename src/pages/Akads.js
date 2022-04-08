@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import Carousel from 'react-material-ui-carousel';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import LaunchIcon from '@material-ui/icons/Launch'
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider, styled} from '@mui/material/styles';
 
 export default function Akads() {
   const theme = createTheme({
@@ -15,6 +15,22 @@ export default function Akads() {
       fontFamily: 'Poppins, sans-serif',
     }
   })
+
+  theme.typography.h1 = {
+    fontSize: '1.2rem',
+    '@media (min-width:600px)': {
+      fontSize: '1.5rem',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2.4rem',
+    },
+  }
+
+  // theme = responsiveFontSizes(theme)
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
 
     return(
       <ThemeProvider theme={theme}>
@@ -45,7 +61,7 @@ export default function Akads() {
                     
                     <Box mb={1}>
                       <a
-                        href='https://akadsph.com'
+                         onClick={() => openInNewTab('https://akadsph.com')}
                         aria-label='live preview'
                         className='link link--icon'
                         style={{margiRight: '40px'}}
@@ -56,7 +72,7 @@ export default function Akads() {
                     
 
                     <a
-                      href='https://www.youtube.com/watch?v=AZuWV_sB53k'
+                      onClick={() => openInNewTab('https://www.youtube.com/watch?v=AZuWV_sB53k')}
                       aria-label='youtube vid'
                       className='link link--icon'
                     >

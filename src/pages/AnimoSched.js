@@ -17,6 +17,21 @@ export default function AnimoSched() {
       }
     })
 
+    theme.typography.h1 = {
+      fontSize: '1.2rem',
+      '@media (min-width:600px)': {
+        fontSize: '1.5rem',
+      },
+      [theme.breakpoints.up('md')]: {
+        fontSize: '2.4rem',
+      },
+    }
+
+    const openInNewTab = (url) => {
+      const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+      if (newWindow) newWindow.opener = null
+    }
+
     let personas = ['/AnimoSched/personas/meticulous_mike.png', '/AnimoSched/personas/delayed_denny.png', '/AnimoSched/personas/busy_bea.png', '/AnimoSched/personas/clique_cara.png', '/AnimoSched/personas/easygoing_elliot.png', '/AnimoSched/personas/efficient_ericka.png']
     let v1 = ['/AnimoSched/v1/v1_landing.png', '/AnimoSched/v1/v1_search.png', '/AnimoSched/v1/v1_preferences.png', '/AnimoSched/v1/v1_create.png', '/AnimoSched/v1/v1_save.png']
     let v2 = ['/AnimoSched/v2/v2_landing.png', '/AnimoSched/v2/v2_preference.png', '/AnimoSched/v2/v2_search.png']
@@ -279,7 +294,7 @@ export default function AnimoSched() {
                   <Typography variant="body1" gutterBottom mt={2}>
                     Overall, AnimoSched showed significant improvements in decision-making, cognitive load, stress, and the satisfaction of students with schedule making. A research paper was written for this project and was published in CHI 2021, a top-tier HCI conference. A more detailed discussion can be found in the paper.
                     <a
-                    href='https://comet.dlsu.edu.ph/files/2021manzano_sat_scheduler_chi.pdf'
+                    onClick={() => openInNewTab('https://comet.dlsu.edu.ph/files/2021manzano_sat_scheduler_chi.pdf')}
                     aria-label='paper'
                     className='link link--icon'
                     >

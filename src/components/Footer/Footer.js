@@ -16,7 +16,7 @@ const Footer = () => {
           href='/#/#projects/'
           className='link footer__link'
         >
-          all
+          all projects
         </a>
 
         <a
