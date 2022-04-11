@@ -25,10 +25,9 @@ const App = () => {
 
   return (
     <div id='top' className={`${themeName} app`}>
-      <Header />
-
       {/* <Home/> */}
       <HashRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/AnimoSched" element={<AnimoSched />}/>

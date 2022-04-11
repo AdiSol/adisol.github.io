@@ -6,9 +6,9 @@ import CloseIcon from '@material-ui/icons/Close'
 import { ThemeContext } from '../../contexts/theme'
 import { projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
-import { Link } from "react-router-dom";
 import Container from '@mui/material/Container';
 import * as React from 'react';
+import { HashLink } from 'react-router-hash-link';
 
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <React.Fragment>
     <Container>
-    <a
+    {/* <a
       href='/#/'
       onClick={toggleNavList}
       // className='link link--nav'
@@ -29,7 +29,7 @@ const Navbar = () => {
         Adrienne Soliven
       </div>
       
-    </a>
+    </a> */}
     </Container>
     <nav className='center nav'>
      
@@ -42,17 +42,15 @@ const Navbar = () => {
         </li>
 
         {projects.length ? (
-          // <Link to={'/#projects'}>
+
             <li className='nav__list-item'>
-              <a
-                href='/#/#projects'
-                onClick={toggleNavList}
-                className='link link--nav'
+              <HashLink to={'#projects'}
+              onClick={toggleNavList}
+              className='link link--nav'
               >
                 Projects
-              </a>
+              </HashLink>
             </li>
-          // </Link>
         ) : null}
 
         {/* <li className='nav__list-item'>
@@ -67,13 +65,13 @@ const Navbar = () => {
 
         {contact.email ? (
           <li className='nav__list-item'>
-            <a
-              href='/#/#contact'
+            <HashLink
+              to='#contact'
               onClick={toggleNavList}
               className='link link--nav'
             >
               Contact
-            </a>
+            </HashLink>
           </li>
         ) : null}
       </ul>

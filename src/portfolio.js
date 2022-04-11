@@ -1,19 +1,19 @@
 const header = {
   // all the properties are optional - can be left empty or deleted
-  homepage: 'https://manzano.tech',
-  title: 'JM',
+  homepage: 'https://adriennesoliven.com',
+  title: 'AS',
 }
 
 const about = {
   // all the properties are optional - can be left empty or deleted
-  name: 'Josh Manzano',
-  role: ['Full-Stack Developer', 'Web Developer', 'Software Engineer', 'Linux Enthusiast'],
+  name: 'Adrienne Soliven',
+  role: ['User Researcher', 'Web Developer', 'Aspiring UX Designer'],
   description:
     'Hello world!',
-  resume: '/manzano_resume.pdf',
+  resume: '/soliven_resume.pdf',
   social: {
-    linkedin: 'https://www.linkedin.com/in/joshua-manzano-49890b143',
-    github: 'https://github.com/joshmanzano',
+    linkedin: 'https://www.linkedin.com/in/adrienne-soliven-7725831aa/',
+    github: 'https://github.com/adisol',
   },
 }
 
