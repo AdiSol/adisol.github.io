@@ -44,7 +44,7 @@ const Navbar = () => {
         {projects.length ? (
 
             <li className='nav__list-item'>
-              <HashLink to={'#projects'}
+              <HashLink to={'/#projects'}
               onClick={toggleNavList}
               className='link link--nav'
               >
@@ -66,7 +66,7 @@ const Navbar = () => {
         {contact.email ? (
           <li className='nav__list-item'>
             <HashLink
-              to='#contact'
+              to='/#contact'
               onClick={toggleNavList}
               className='link link--nav'
             >
