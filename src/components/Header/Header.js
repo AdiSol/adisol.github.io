@@ -10,7 +10,7 @@ const Header = () => {
       <h3>
         {homepage ? (
           <a href={homepage} className='link'>
-            {title}
+            <img src='logo.png' height={'50rem'}/>
           </a>
         ) : (
           title

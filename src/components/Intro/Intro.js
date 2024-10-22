@@ -41,7 +41,7 @@ const CenteredImage = styled.img`
     transform: translate(-50%, -50%);
     width: 23vw; /* Make image width responsive */
     height: 23vw; /* Make image height responsive */
-    border-radius: 50%;
+    border-radius: 40%;
 
     // @media (max-width: 768px) {
     //     width: 35vw; /* Larger width for smaller screens */
@@ -66,8 +66,8 @@ const Intro = () => {
                 </CircularText>     
                 <CenteredImage src="/Home/me-3d.png" alt="3D illustration of Adrienne" />
                 <TextIntro>
-                    <h1 style={{fontSize: "10vw"}}>I'm Adrienne</h1>
-                    <h4>Web Developer, UX Researcher, & Illustrator</h4>
+                    <h1 style={{fontSize: "10vw", color: "white"}}>I'm Adrienne</h1>
+                    <h4 style={{color: "white"}}>Web Developer, UX Researcher, & Illustrator</h4>
             </TextIntro>
             </ImageContainer> 
             
