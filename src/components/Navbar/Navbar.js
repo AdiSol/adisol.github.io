@@ -25,9 +25,8 @@ const NavBar = styled.nav`
 
 const NavItemsContainer = styled.div`
   display: flex;
-  gap: 2rem;
-  padding: 1rem 2rem;
-  // background: rgba(255, 255, 255, 0.2); /* Apply the blur to the container */
+  gap: 1rem;
+  padding: 0.7rem 1.5rem;
   backdrop-filter: blur(15px);
   border-radius: 50px; /* Rounded edges */
   
@@ -46,7 +45,6 @@ const NavItems = styled.ul`
   li {
     font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
     color: #333366;
     padding: 0.5rem 0.75rem;
     background: none; 
@@ -57,10 +55,10 @@ const NavItems = styled.ul`
   }
 
   li.active {
-    background-color: rgba(147, 112, 219, 0.45);
-    color: white;
-    padding: 0.5rem 0.75rem;
-    border-radius: 35px;
+    background-color: rgba(147, 112, 219, 0.2);
+    // color: white;
+    padding: 0.5rem 0.8rem;
+    border-radius: 40px;
   }
 `;
 
