@@ -7,18 +7,29 @@ import Skills from '../components/Skills/Skills'
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
-
+import styled from 'styled-components';
+import Intro from '../components/Intro/Intro'
+import bgImage from './bg.jpg';
 const Home = () => {
 //   const [{ themeName }] = useContext(ThemeContext)
-
+  const HomeBG = styled.div`
+  background-image: url(${bgImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 100%;
+`;
   return (
     // <div id='top' className={`${themeName} app`}>
-
-      <main>
-        <About />
+    // <HomeBG>
+    //   <span>hello</span>
+    // </HomeBG>
+      <main style={{height: "300vh"}}>
+        <Intro />
+        {/* <About />
         <Projects />
-        {/* <Skills /> */}
-        <Contact />
+        <Skills />
+        <Contact /> */}
       </main>
 
     // </div>
