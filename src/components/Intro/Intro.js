@@ -66,7 +66,7 @@ const Intro = () => {
                 </CircularText>     
                 <CenteredImage src="/Home/me-3d.png" alt="3D illustration of Adrienne" />
                 <TextIntro>
-                    <h1>I'm Adrienne</h1>
+                    <h1 style={{fontSize: "10vw"}}>I'm Adrienne</h1>
                     <h4>Web Developer, UX Researcher, & Illustrator</h4>
             </TextIntro>
             </ImageContainer> 
