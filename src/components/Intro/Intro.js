@@ -10,7 +10,11 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 30vh; /* Make sure the content is centered vertically */
+    min-height: 5vh; /* Make sure the content is centered vertically */
+
+    @media (max-width: 768px) {
+        min-height: 0.5vh;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -66,8 +70,8 @@ const Intro = () => {
                 </CircularText>     
                 <CenteredImage src="/Home/me-3d.png" alt="3D illustration of Adrienne" />
                 <TextIntro>
-                    <h1 style={{fontSize: "10vw", color: "white"}}>I'm Adrienne</h1>
-                    <h4 style={{color: "white"}}>Web Developer, UX Researcher, & Illustrator</h4>
+                    <h1 style={{fontSize: "9vw", color: "white"}}>I'm Adrienne</h1>
+                    <h2 style={{color: "white"}}>Web Developer, UX Researcher, & Illustrator</h2>
             </TextIntro>
             </ImageContainer> 
             
