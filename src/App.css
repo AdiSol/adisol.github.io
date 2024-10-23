@@ -12,12 +12,20 @@
   --clr-fg-alt: #444;
   --clr-primary: #2978b5;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background: url('./pages/bg.png');
-  background-size: cover;
+  background: url('./pages/bg.svg');
+  /* background-image: url('./pages/bg.svg'); */
   background-repeat: no-repeat;
-  /* background-position: top; */
-  width: 100%;
+  background-size: cover;
+  background-position: top;
+  /* width: 100%; */
+  /* background-position: center; */
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
   /* height: 30%; */
+  width: 100vw;
+  height: 170vh;
+
+  
 }
 
 .dark {

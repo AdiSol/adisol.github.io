@@ -81,9 +81,9 @@ const Spacer = styled.div`
 `;
 
 const LogoImg = styled.img`
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   z-index: 2000;
-  width: 5rem;
+  width: 6.5rem;
 
   @media (max-width: 768px) {
     display: none; 

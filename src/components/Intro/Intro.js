@@ -71,7 +71,7 @@ const Intro = () => {
                 <CenteredImage src="/Home/me-3d.png" alt="3D illustration of Adrienne" />
                 <TextIntro>
                     <h1 style={{fontSize: "9vw", color: "white"}}>I'm Adrienne</h1>
-                    <h2 style={{color: "white"}}>Web Developer, UX Researcher, & Illustrator</h2>
+                    <h2 style={{color: "white", fontSize: "3vw"}}>Web Developer, UX Researcher, & Illustrator</h2>
             </TextIntro>
             </ImageContainer> 
             

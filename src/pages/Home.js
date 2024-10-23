@@ -9,7 +9,7 @@ import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import styled from 'styled-components';
 import Intro from '../components/Intro/Intro'
-import bgImage from './bg.jpg';
+import bgImage from './bg.png';
 const Home = () => {
 //   const [{ themeName }] = useContext(ThemeContext)
   const HomeBG = styled.div`
