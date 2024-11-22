@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from './ProjectCard';
 
+const TitleStyle = styled.h2`
+    font-size: clamp(2rem, 5vw, 5rem);
+    margin-left: 1rem;
+`;
 const Work = () => {
+    
+
     const projects = [
         {
             title: "SafeHands", 
@@ -43,11 +49,11 @@ const Work = () => {
     ]
     return (
         <div>
-            <h2 style={{fontSize:"5rem"}}>Work</h2>
+            <TitleStyle>Work</TitleStyle>
             <div  style={{
                     display: 'flex',
                     flexWrap: 'wrap', // Enable wrapping
-                    gap: '10rem',  
+                    gap: '1rem',  
                 }}
             >
                 {

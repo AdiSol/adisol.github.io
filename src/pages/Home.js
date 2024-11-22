@@ -11,22 +11,30 @@ import styled from 'styled-components';
 import Intro from '../components/Intro/Intro'
 import bgImage from './bg.png';
 import Work from '../components/Work/Work'
+
+const Main = styled.div`
+    margin: ;
+    @media (max-width: 480px) {
+      margin: auto;
+    }
+  `
+
 const Home = () => {
 //   const [{ themeName }] = useContext(ThemeContext)
-
+  
   return (
     // <div id='top' className={`${themeName} app`}>
     // <HomeBG>
     //   <span>hello</span>
     // </HomeBG>
-      <main style={{height: "300vh"}}>
+      <Main>
         <Intro />
         <Work />
         {/* <About />
         <Projects />
         <Skills />
         <Contact /> */}
-      </main>
+      </Main>
 
     // </div>
   )

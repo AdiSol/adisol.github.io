@@ -14,6 +14,7 @@ const Wrapper = styled.div`
     margin-bottom: 20rem;
     @media (max-width: 768px) {
         min-height: 0.5vh;
+        margin-bottom: 4rem;
     }
 `;
 

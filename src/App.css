@@ -23,7 +23,7 @@
   /* background-size: cover; */
   /* height: 30%; */
   width: 100vw;
-  height: 170vh;
+  /* height: 170vh; */
 
   
 }
@@ -40,13 +40,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
-  height: 30%;
-}
-
-main {
-  max-width: 1700px;
-  width: 98%;
-  margin: 0 auto;
+  /* height: 30%; */
 }
 
 .section {
