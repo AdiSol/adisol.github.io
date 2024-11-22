@@ -13,11 +13,21 @@ import bgImage from './bg.png';
 import Work from '../components/Work/Work'
 
 const Main = styled.div`
-    margin: ;
-    @media (max-width: 480px) {
-      margin: auto;
-    }
-  `
+  margin: auto 5vw;
+
+  @media (max-width: 480px) {
+    margin: auto 2vw; /* Reduce margins for very small screens */
+  }
+
+  @media (min-width: 768px) {
+    margin: auto 10vw; /* Increase margins for medium screens */
+  }
+
+  @media (min-width: 1400px) {
+    margin: auto 15vw; /* Further increase for wide screens */
+  }
+`;
+
 
 const Home = () => {
 //   const [{ themeName }] = useContext(ThemeContext)
@@ -30,10 +40,11 @@ const Home = () => {
       <Main>
         <Intro />
         <Work />
-        {/* <About />
-        <Projects />
+        <About />
+        <Contact />
+        {/*<Projects />
         <Skills />
-        <Contact /> */}
+         */}
       </Main>
 
     // </div>

@@ -1,11 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from './ProjectCard';
+import { TitleStyle } from '../../contexts/theme';
 
-const TitleStyle = styled.h2`
-    font-size: clamp(2rem, 5vw, 5rem);
-    margin-left: 1rem;
+const WorkSection = styled.section`
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1400px;
+  margin: 4rem auto;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack items on small screens */
+    text-align: center; /* Center align text for smaller screens */
+  }
 `;
+
+const Heading = styled.h2`
+  font-size: clamp(2rem, 4vw, 3rem); /* Responsive title size */
+  color: #3c4858;
+  margin-bottom: 1rem;
+  
+`;
+
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Two columns unless on smaller screens */
+  gap: 3rem; /* Space between cards */
+  width: 100%;
+  max-width: 1400px; /* Restrict overall width */
+  margin: auto; /* Center the grid container */
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+`;
+
 const Work = () => {
     
 
@@ -48,21 +79,16 @@ const Work = () => {
     
     ]
     return (
-        <div>
-            <TitleStyle>Work</TitleStyle>
-            <div  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap', // Enable wrapping
-                    gap: '1rem',  
-                }}
-            >
+        <WorkSection>
+            <Heading>Work</Heading>
+            <GridContainer>
                 {
                     projects.map(project => (
                         <ProjectCard project={project}/>
                     ))
                 }
-            </div>
-        </div>
+            </GridContainer>
+        </WorkSection>
     )    
 }
 

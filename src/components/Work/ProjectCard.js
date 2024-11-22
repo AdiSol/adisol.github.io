@@ -3,22 +3,20 @@ import { Typography } from "@material-ui/core";
 import styled from "styled-components";
 
 // Styled Components
+
+
 const CardContainer = styled.div`
-  width: 90%; /* Full width for smaller screens */
-  max-width: 750px; /* Restrict max width on larger screens */
-  min-height: 850px; /* Ensure minimum height for the card */
   background: #fae7cc;
   border-radius: 25px;
-  position: relative; /* Enables positioning for child elements */
-  margin: 1rem auto; /* Center the card with spacing */
-  overflow: hidden; /* Prevent overflow of inner elements */
+  position: relative;
+  overflow: hidden;
+  min-height: 850px; /* Maintain minimum height */
 
   @media (max-width: 768px) {
-    min-height: 700px; /* Adjust minimum height for smaller screens */
+    min-height: 700px;
   }
 
   @media (max-width: 480px) {
-    width: 95%; /* Increase width slightly for very small screens */
     min-height: 600px;
   }
 `;
