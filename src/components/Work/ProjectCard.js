@@ -43,10 +43,9 @@ const TagsContainer = styled.div`
   flex-wrap: wrap; /* Allow tags to wrap */
   gap: 0.5rem; /* Space between tags */
   position: absolute; /* Stick tags to the bottom */
-  bottom: 1rem;
-  left: 1rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
   right: 1rem;
-  justify-content: center; /* Center the tags for better appearance */
 
   @media (max-width: 480px) {
     gap: 0.3rem; /* Reduce spacing between tags on smaller screens */
