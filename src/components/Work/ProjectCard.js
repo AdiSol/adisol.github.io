@@ -62,7 +62,7 @@ const Tag = styled.span`
   }
 `;
 
-const StyledTitle = styled(Typography)`
+const StyledTitle = styled.h3`
   color: #3c4858;
   font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font scaling */
   margin-bottom: 0.5rem;
@@ -72,7 +72,7 @@ const StyledTitle = styled(Typography)`
   }
 `;
 
-const StyledDescription = styled(Typography)`
+const StyledDescription = styled.p`
   color: rgba(0, 0, 0, 0.7); /* Text secondary color */
   font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font scaling */
 
@@ -89,10 +89,10 @@ const ProjectCard = ({ project }) => {
 
       {/* Content */}
       <CardContent>
-        <StyledTitle gutterBottom variant="h3">
+        <StyledTitle>
           {project.title}
         </StyledTitle>
-        <StyledDescription variant="subtitle1">
+        <StyledDescription>
           {project.desc}
         </StyledDescription>
       </CardContent>

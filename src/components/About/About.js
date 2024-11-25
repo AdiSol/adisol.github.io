@@ -1,26 +1,6 @@
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import { about } from '../../portfolio'
-import Text from '../../Text'
-import ReactRotatingText from 'react-rotating-text'
 import './About.css'
-import { TitleStyle, Section } from '../../contexts/theme'
+import { Section } from '../../contexts/theme'
 import styled from 'styled-components'
-
-const AboutSection = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1200px;
-  margin: 4rem auto;
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column; /* Stack items on small screens */
-    text-align: center; /* Center align text for smaller screens */
-  }
-`;
 
 const TextContent = styled.div`
   flex: 1; /* Take up equal space */
@@ -70,6 +50,10 @@ const ImageContainer = styled.div`
   }
 `;
 
+const Paragraph = styled.p`
+  font-size: clamp(1rem, 2.5vw, 1.5rem); 
+`;
+
 const About = () => {
 
   return (
@@ -78,18 +62,18 @@ const About = () => {
         <TextContent>
           <Heading>About</Heading>
           <AboutText>
-            <p>
+            <Paragraph>
               Hi! I’m Adrienne. I am a
               web developer that’s very interested in UI/UX, especially with UX
               research! I like to play around designs and ideas. And finding ways
               to solve problems through design and technology!
-            </p>
-            <p>
+            </Paragraph>
+            <Paragraph>
               During my past times, I like to draw, specifically of my friends.
               Sometimes I try new mediums to make art. I am a foodie at heart. I
               also like to hike and work out. Anything to make me feel good and
               strong honestly. Occasionally, I go scuba diving and bouldering.
-            </p>
+            </Paragraph>
           </AboutText>
           <ResumeLink href="./Resume.pdf">
             Resume &#8594; {/* Arrow symbol */}
