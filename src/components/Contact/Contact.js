@@ -104,7 +104,7 @@ const Contact = () => {
   }
 
   return (
-    <Section>
+    <Section id='contact'>
       {/* <TitleStyle>Contact</TitleStyle> */}
       
       <TextContent>

@@ -1,20 +1,9 @@
-import { useContext, useState } from 'react'
-import Brightness2Icon from '@material-ui/icons/Brightness2'
-import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
-import MenuIcon from '@material-ui/icons/Menu'
-import CloseIcon from '@material-ui/icons/Close'
-import { ThemeContext } from '../../contexts/theme'
-import { projects, skills, contact } from '../../portfolio'
-import './Navbar.css'
-import Container from '@mui/material/Container';
-import * as React from 'react';
-import { HashLink } from 'react-router-hash-link';
-
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { header } from '../../portfolio'
+
 const NavBar = styled.nav`
   display: flex;
-  justify-content: center; /* Center the navbar content */
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
@@ -35,11 +24,11 @@ const NavItemsContainer = styled.div`
   gap: 1rem;
   padding: 0.7rem 1.5rem;
   backdrop-filter: blur(15px);
-  border-radius: 50px; /* Rounded edges */
-  
+  border-radius: 50px;
+
   &.scrolled {
     backdrop-filter: blur(15px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: a soft shadow */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.4);
   }
 `;
@@ -55,25 +44,19 @@ const NavItems = styled.ul`
     font-weight: 600;
     color: #333366;
     padding: 0.5rem 0.75rem;
-    background: none; 
+    background: none;
+    cursor: pointer;
 
-    @media (max-width: 768px) {
-      // font-size: 2.5vw;
+    &.active {
+      background-color: rgba(147, 112, 219, 0.2);
+      padding: 0.5rem 0.8rem;
+      border-radius: 40px;
+    }
+
+    &:hover {
+      color: #6a5acd;
     }
   }
-
-  li: hover {
-    color: #6A5ACD;
-  }
-
-  li.active {
-    background-color: rgba(147, 112, 219, 0.2);
-    // color: white;
-    padding: 0.5rem 0.8rem;
-    border-radius: 40px;
-  }
-
-  
 `;
 
 const Spacer = styled.div`
@@ -86,14 +69,13 @@ const LogoImg = styled.img`
   width: 6.5rem;
 
   @media (max-width: 768px) {
-    display: none; 
+    display: none;
   }
 `;
 
-
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const { homepage, title } = header
+  const [activeSection, setActiveSection] = useState('home');
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -101,37 +83,77 @@ const Navbar = () => {
     } else {
       setScrolled(false);
     }
-  }
+  };
 
-  React.useEffect(() => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(sectionId)
+    }
+  };
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [])
+
+    const sections = document.querySelectorAll('section'); // Add `id` attributes to sections
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, // Trigger when at least 50% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id); // Set the currently visible section
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   return (
     <>
       <Spacer />
-      {homepage ? (
-          <a href={homepage} className='link'>
-            <LogoImg src='logo.png'/>
-          </a>
-        ) : (
-          title
-        )}
       <NavBar>
-        
         <NavItemsContainer className={scrolled ? 'scrolled' : ''}>
           <NavItems>
-            <li className='active'>Home</li>
-            <li>Work</li>
-            <li>About</li>
-            <li>Contact</li>
-            {/* <li>Resume</li> */}
+            <li
+              onClick={() => scrollToSection('home')}
+              className={activeSection === 'home' ? 'active' : ''}
+            >
+              Home
+            </li>
+            <li
+              onClick={() => scrollToSection('work')}
+              className={activeSection === 'work' ? 'active' : ''}
+            >
+              Work
+            </li>
+            <li
+              onClick={() => scrollToSection('about')}
+              className={activeSection === 'about' ? 'active' : ''}
+            >
+              About
+            </li>
+            <li
+              onClick={() => scrollToSection('contact')}
+              className={activeSection === 'contact' ? 'active' : ''}
+            >
+              Contact
+            </li>
           </NavItems>
         </NavItemsContainer>
       </NavBar>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

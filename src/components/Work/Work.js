@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from './ProjectCard';
-import { TitleStyle } from '../../contexts/theme';
+
 
 const WorkSection = styled.section`
   align-items: center;
@@ -79,12 +79,12 @@ const Work = () => {
     
     ]
     return (
-        <WorkSection>
+        <WorkSection id='work'>
             <Heading>Work</Heading>
             <GridContainer>
                 {
                     projects.map(project => (
-                        <ProjectCard project={project}/>
+                        <ProjectCard project={project} key={project.title}/>
                     ))
                 }
             </GridContainer>

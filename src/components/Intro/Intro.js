@@ -59,7 +59,7 @@ const SubText = styled.h2`
 `
 const Intro = () => {
     return (
-        <>
+        <div id="home">
             <Wrapper>
                 <ImageContainer>
                     <CircularText viewBox="0 0 300 300">
@@ -79,7 +79,7 @@ const Intro = () => {
                     </TextIntro>
                 </ImageContainer> 
             </Wrapper>
-        </>
+        </div>
     );
 };
 
