@@ -28,7 +28,7 @@ const ResumeLink = styled.a`
   color: #3c4858;
 
   &:hover {
-    text-decoration: underline;
+    // text-decoration: underline;
     color: #2b7ac1;
   }
 `;
