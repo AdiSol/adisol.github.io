@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TextIntro = styled.div`
     text-align: center;
-    margin-top: 33vw;
+    margin-top: clamp(1rem, 35vw, 40rem);
 `
 const Wrapper = styled.div`
     display: flex;
@@ -11,31 +11,30 @@ const Wrapper = styled.div`
     align-items: center;
     flex-direction: column;
     min-height: 10vh; /* Make sure the content is centered vertically */
-    margin-bottom: 20rem;
+    margin-bottom: clamp(4rem, 15vw, 17rem);
     @media (max-width: 768px) {
         min-height: 0.5vh;
-        margin-bottom: 4rem;
     }
 `;
 
 const ImageContainer = styled.div`
     position: relative;
-    width: 80vw; /* Set width relative to viewport */
-    height: 40vw; /* Set height relative to viewport */
+    // width: clamp(300px, 80vw, 800px); 
+    height: clamp(150px, 40vw, 800px); 
 `;
 
 const CircularText = styled.svg`
     position: absolute;
     width: 100%;
     height: 100%;
-    font-size: 1.75vw; /* Make font-size relative to viewport width */
+    font-size: clamp(1rem, 1.75vw, 2rem);
     text-align: center;
     fill: white; 
     font-family: 'Arial', sans-serif;
     letter-spacing: 0.4rem;
 
     @media (max-width: 768px) {
-        font-size: 5.5vw; /* Adjust font size for smaller screens */
+        font-size: clamp(3rem, 5vw, 5.5rem); 
     }
 `;
 
@@ -44,16 +43,20 @@ const CenteredImage = styled.img`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 23vw; /* Make image width responsive */
-    height: 23vw; /* Make image height responsive */
+    width: clamp(100px, 23vw, 550px); /* Min: 100px, Responsive, Max: 250px */
+    height: clamp(100px, 23vw, 550px); /* Min: 100px, Responsive, Max: 250px */
     border-radius: 40%;
-
-    // @media (max-width: 768px) {
-    //     width: 35vw; /* Larger width for smaller screens */
-    //     height: 35vw; /* Adjust height accordingly */
-    // }
 `;
 
+const NameText = styled.h1`
+    font-size: clamp(2.5rem, 9vw, 7rem);
+    color: white;
+`;
+
+const SubText = styled.h2`
+    font-size: clamp(1rem, 3vw, 3rem);
+    color: white;
+`
 const Intro = () => {
     return (
         <>
@@ -71,8 +74,8 @@ const Intro = () => {
                     </CircularText>     
                     <CenteredImage src="/Home/me-3d.png" alt="3D illustration of Adrienne" />
                     <TextIntro>
-                        <h1 style={{fontSize: "9vw", color: "white"}}>I'm Adrienne</h1>
-                        <h2 style={{color: "white", fontSize: "3vw"}}>Web Developer, UX Researcher, & Illustrator</h2>
+                        <NameText>I'm Adrienne</NameText>
+                        <SubText>Web Developer, UX Researcher, & Illustrator</SubText>
                     </TextIntro>
                 </ImageContainer> 
             </Wrapper>
