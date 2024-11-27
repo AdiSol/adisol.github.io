@@ -30,8 +30,8 @@ const CircularText = styled.svg`
     font-size: clamp(1rem, 1.75vw, 2rem);
     text-align: center;
     fill: white; 
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 0.4rem;
+    // font-family: 'Arial', sans-serif;
+    letter-spacing: 0.3rem;
 
     @media (max-width: 768px) {
         font-size: clamp(3rem, 5vw, 5.5rem); 
