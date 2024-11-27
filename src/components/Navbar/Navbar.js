@@ -95,27 +95,8 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
-    const sections = document.querySelectorAll('section'); // Add `id` attributes to sections
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Trigger when at least 50% of the section is visible
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id); // Set the currently visible section
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach((section) => observer.observe(section));
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
 
