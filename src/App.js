@@ -33,7 +33,7 @@ const App = () => {
       </HashRouter>
      
       <ScrollToTop />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
