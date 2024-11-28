@@ -1,6 +1,26 @@
 import { createContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components';
 
+export const TitleStyle = styled.h2`
+font-size: clamp(2rem, 5vw, 5rem);
+margin-left: 1rem;
+`;
+
+export const Section = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1400px;
+  margin: 4rem auto;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Stack items on small screens */
+    text-align: center; /* Center align text for smaller screens */
+  }
+`;
 const ThemeContext = createContext()
 
 const ThemeProvider = ({ children }) => {

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
+/*
 .nav__list {
   margin-right: 1.5em;
   display: flex;
@@ -39,21 +39,21 @@
     margin-left: 0.8em;
   }
 }
-
+*/
 
 .brand-logo {
-  display: inline-flex !important;
+  /* display: inline-flex !important;
   display: inline-block;
   height: 100%;
-  padding-left: 20px;
+  padding-left: 20px; */
   /* font-family: 'Montserrat', sans-serif; */
-  font-weight: 600;
-  font-size: larger;
+  /* font-weight: 600;
+  font-size: larger; */
   /* color: #0A3276; */
 }
 
 .nav {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+  /*position: -webkit-sticky; *//* Safari */
+  /* position: sticky;
+  top: 0; */
 }
