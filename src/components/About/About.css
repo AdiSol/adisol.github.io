@@ -1,0 +1,106 @@
+.about {
+  flex-direction: column;
+  margin-top: 3em;
+}
+
+.about__name {
+  color: var(--clr-primary);
+}
+
+.about__role {
+  margin-top: 1.2em;
+}
+
+.about__desc {
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.about__desc,
+.about__contact {
+  margin-top: 2.4em;
+}
+
+.about .link--icon {
+  margin-right: 0.8em;
+}
+
+.about .btn--outline {
+  margin-right: 1em;
+}
+
+@media (max-width: 600px) {
+  .app .about {
+    align-items: flex-start;
+    margin-top: 2em;
+  }
+}
+
+.waving-hand {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+.waving-my-hand {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 80% 60%;
+  display: inline-block;
+}
+
+.waving-my-arm {
+  animation-name: wave-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 90%;
+  display: inline-block;
+}
+
+.eyes-move {
+  animation-name: look-animation;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 0%;
+  display: inline-block;
+}
+
+.facial-move {
+  animation-name: facial-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  transform-origin: 0%;
+  display: inline-block;
+}
+
+@keyframes facial-animation {
+  0%   {transform: translateY(0%);}
+  25%  {transform: translateY(0.5%);}
+  50%  {transform: translateY(-0.5%);}
+  75%  {transform: translateY(0%);}
+  100% {transform: translateY(0%);}
+}
+
+@keyframes look-animation {
+  0%   {transform: translateX(0%);}
+  25%  {transform: translateX(2%);}
+  50%  {transform: translateX(-2%);}
+  75%  {transform: translateX(0%);}
+  100% {transform: translateX(0%);}
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate( 0.0deg) }
+  15% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+  30% { transform: rotate(-8.0deg) }
+  40% { transform: rotate(14.0deg) }
+  50% { transform: rotate(-4.0deg) }
+  60% { transform: rotate(10.0deg) }
+  70% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+ 100% { transform: rotate( 0.0deg) }
+}
+
+
