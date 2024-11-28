@@ -12,13 +12,13 @@ const Header = () => {
 
   return (
     <header className='header center'>
-        {/* {homepage ? (
+        {homepage ? (
           <a href={homepage} className='link'>
             <LogoImg src='logo.png' height={'45rem'}/>
           </a>
         ) : (
           title
-        )} */}
+        )}
       <Navbar />
     </header>
   )
