@@ -50,14 +50,14 @@ const Work = () => {
         },
         {
             title: "NU LPR 101", 
-            desc: "An AI hand detection tool that uses a web app to specify hazardous areas for extra protection to manufacturing workers. Won top prize in AI+ Day 2022 (Taipei).", 
+            desc: "A license plate recognition tool that utilizes the web for setup configuration and connecting to other 3rd party application for parking lot use cases.", 
             tags: ['ReactJS', 'Flask Python', 'RESTfulAPI', 'NGINX', 'SemanticUI', 'Redis Server', 'Ubuntu Environment','Figma'], 
             img: "/NULPR101/cars.png", 
             route: '/work/NULPR101'
         },
         {
             title: "AkadsPH", 
-            desc: "An all-in-one tutoring platform, that helps parents find tutors for their kids.", 
+            desc: "An all-in-one tutoring platform, that helps parents find tutors for their kids through a matching system. Clients can book and pay on a single platform.", 
             tags: ['ReactJS', 'MaterialUI', 'RESTfulAPI', 'Figma', 'Usability Testing'], 
             img: "/Akads/landing1.png", 
             route: '/work/AkadsPH'
@@ -71,8 +71,8 @@ const Work = () => {
         },
         {
             title: "CoDo", 
-            desc: "A condominium/dormitory companion mockup project that was done through InVision.", 
-            tags: ['InVision'], 
+            desc: "A condominium/dormitory companion mockup project that was done through InVision. Incapsulates all the needs a dormitory student would need in a single mobile app.", 
+            tags: ['InVision', 'Gravit Designer'], 
             img: "/CoDo/codo_preview.png", 
             route: '/work/CoDo'
         },

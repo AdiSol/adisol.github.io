@@ -11,13 +11,19 @@ const CardContainer = styled.div`
   overflow: hidden;
   min-height: 850px; /* Maintain minimum height */
 
+  @media (min-width: 1024px) {
+    min-height: 750px; 
+  }
+
   @media (max-width: 768px) {
     min-height: 700px;
   }
 
   @media (max-width: 480px) {
-    min-height: 600px;
+    min-height: 510px;
   }
+
+
 `;
 
 const CardImage = styled.img`
