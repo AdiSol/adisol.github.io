@@ -4,13 +4,6 @@ import styled from "styled-components";
 // Styled Components
 
 
-const CardImage = styled.img`
-  width: 100%;
-  height: 25vh; /* Dynamically scale with viewport height */
-  object-fit: cover; /* Ensures the image scales properly */
-  border-radius: 10px 10px 0 0; /* Rounded corners for the top */
-`;
-
 const CardContainer = styled.div`
   background: #fae7cc;
   border-radius: 25px;
@@ -18,25 +11,45 @@ const CardContainer = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 830px;
+  min-height: 30vh; //830px;
 
-  @media (max-width: 768px) {
-    min-height: 600px;
+  /* Mobile (Phones) */
+  @media (max-width: 600px) { 
+    min-height: 500px; /* Smaller height for mobile */
   }
 
-  @media (max-width: 480px) {
-    min-height: auto; /* Allow natural height adjustment */
+  /* Tablets (iPads, Zenbook Fold, etc.), ensuring it doesn't affect mobile */
+  @media (min-width: 601px) and (max-width: 1024px) { 
+    min-height: 700px;
+  }
+
+  /* Nest Hub */
+  @media (min-width: 801px) and (max-width: 1024px) { 
+    min-height: 470px;
+  }
+`;
+
+const CardImage = styled.img`
+  width: 100%;
+  height: 25vh; 
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+
+  @media (max-width: 800px) {
+    height: 50vh; 
+  }
+
+  @media (max-width: 1024px) { 
+    height: 45vh;
   }
 `;
 
 const CardContent = styled.div`
   padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Allows content to push down the tags */
-  
-  @media (max-width: 480px) {
-    padding: 1rem;
+  flex-grow: 1; /* Makes the description take up only necessary space */
+
+  @media (max-width: 1024px) { /* iPad & Zenbook Fold */
+    padding-bottom: 0.5rem; /* Reduce extra space below description */
   }
 `;
 
@@ -44,14 +57,11 @@ const TagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: auto; /* Pushes tags to the bottom */
-  padding: 1rem; /* Adds space around the tags */
-  margin-bottom: 0.1rem; /* Ensures space from the bottom of the card */
+  padding: 1rem;
 
-  @media (max-width: 480px) {
-    gap: 0.3rem;
-    padding: 0.8rem; /* Adjust padding for smaller screens */
-    margin-bottom: 0.1rem;
+  @media (max-width: 800px) { 
+    margin-bottom: 0.5rem; 
+    justify-content: center;
   }
 `;
 
