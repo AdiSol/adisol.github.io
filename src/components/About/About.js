@@ -24,7 +24,7 @@ const ResumeLink = styled.a`
   display: inline-block;
   margin-top: 1.5rem;
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   text-decoration: none;
   color: #3c4858;
 

@@ -89,14 +89,45 @@ const Navbar = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setActiveSection(sectionId)
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const sections = document.querySelectorAll('section');
+    const sectionPositions = Array.from(sections).map((section) => ({
+      id: section.id,
+      offsetTop: section.offsetTop,
+      offsetBottom: section.offsetTop + section.offsetHeight,
+    }));
+  
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const pageBottom = document.documentElement.scrollHeight;
+  
+      if (scrollBottom >= pageBottom - 5) {
+        // If scrolled to the bottom of the page, set activeSection to 'about'
+        setActiveSection('about');
+        return;
+      }
+  
+      let currentSection = 'home'; // Default to the first section
+      for (const section of sectionPositions) {
+        if (
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetBottom
+        ) {
+          currentSection = section.id;
+          break;
+        }
+      }
+      setActiveSection(currentSection);
+    };
+  
+    window.addEventListener('scroll', updateActiveSection);
+  
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', updateActiveSection);
     };
   }, []);
 
@@ -124,12 +155,12 @@ const Navbar = () => {
             >
               About
             </li>
-            <li
+            {/* <li
               onClick={() => scrollToSection('contact')}
               className={activeSection === 'contact' ? 'active' : ''}
             >
               Contact
-            </li>
+            </li> */}
           </NavItems>
         </NavItemsContainer>
       </NavBar>

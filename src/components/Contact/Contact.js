@@ -20,8 +20,8 @@ const LinkContent = styled.div`
   text-align: left;
 `;
 
-const Heading = styled.h2`
-  font-size: clamp(2rem, 4vw, 3rem); /* Responsive title size */
+const Heading = styled.h3`
+  font-size: clamp(1.2rem, 3.2vw, 2.2rem); /* Responsive title size */
   color: #3c4858;
   margin-bottom: 1rem;
 `;
