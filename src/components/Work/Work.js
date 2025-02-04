@@ -43,7 +43,7 @@ const Work = () => {
     const projects = [
         {
             title: "SafeHands", 
-            desc: "An AI hand detection tool that uses a web app to specify hazardous areas for extra protection to manufacturing workers. Won top prize in AI+ Day 2022 (Taipei).", 
+            desc: "An AI hand detection tool that uses a web app to specify hazardous areas for extra protection to manufacturing workers. Won 1st in AI+ Day 2022.", 
             tags: ['ReactJS', 'Flask Python', 'RESTfulAPI', 'NGINX', 'SemanticUI', 'Redis Server', 'Ubuntu Environment', 'Figma'], 
             img: "/SafeHands/punch_example1.png", 
             route: '/work/SafeHands'

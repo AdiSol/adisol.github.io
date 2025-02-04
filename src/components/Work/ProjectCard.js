@@ -9,18 +9,15 @@ const CardContainer = styled.div`
   border-radius: 25px;
   position: relative;
   overflow: hidden;
-  min-height: 850px; /* Maintain minimum height */
+  min-height: 830px; /* Maintain minimum height */
 
-  @media (min-width: 1024px) {
-    min-height: 750px; 
-  }
 
-  @media (max-width: 768px) {
-    min-height: 700px;
-  }
+  // @media (max-width: 500px) {
+  //   min-height: 600px;
+  // }
 
   @media (max-width: 480px) {
-    min-height: 510px;
+    min-height: 300px;
   }
 
 
