@@ -4,25 +4,6 @@ import styled from "styled-components";
 // Styled Components
 
 
-const CardContainer = styled.div`
-  background: #fae7cc;
-  border-radius: 25px;
-  position: relative;
-  overflow: hidden;
-  min-height: 830px; /* Maintain minimum height */
-
-
-  // @media (max-width: 500px) {
-  //   min-height: 600px;
-  // }
-
-  @media (max-width: 480px) {
-    min-height: 300px;
-  }
-
-
-`;
-
 const CardImage = styled.img`
   width: 100%;
   height: 25vh; /* Dynamically scale with viewport height */
@@ -30,25 +11,47 @@ const CardImage = styled.img`
   border-radius: 10px 10px 0 0; /* Rounded corners for the top */
 `;
 
-const CardContent = styled.div`
-  padding: 1rem 2rem;
+const CardContainer = styled.div`
+  background: #fae7cc;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 830px;
+
+  @media (max-width: 768px) {
+    min-height: 600px;
+  }
 
   @media (max-width: 480px) {
-    padding: 1rem; /* Reduce padding on smaller screens */
+    min-height: auto; /* Allow natural height adjustment */
+  }
+`;
+
+const CardContent = styled.div`
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows content to push down the tags */
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
   }
 `;
 
 const TagsContainer = styled.div`
   display: flex;
-  flex-wrap: wrap; /* Allow tags to wrap */
-  gap: 0.5rem; /* Space between tags */
-  position: absolute; /* Stick tags to the bottom */
-  bottom: 1.5rem;
-  left: 1.5rem;
-  right: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto; /* Pushes tags to the bottom */
+  padding: 1rem; /* Adds space around the tags */
+  margin-bottom: 0.1rem; /* Ensures space from the bottom of the card */
 
   @media (max-width: 480px) {
-    gap: 0.3rem; /* Reduce spacing between tags on smaller screens */
+    gap: 0.3rem;
+    padding: 0.8rem; /* Adjust padding for smaller screens */
+    margin-bottom: 0.1rem;
   }
 `;
 

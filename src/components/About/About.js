@@ -41,7 +41,7 @@ const ImageContainer = styled.div`
   justify-content: center;
   margin: 4rem auto;
   @media (max-width: 768px) {
-    max-width: 200px;
+    margin: auto;
   }
 `;
 
