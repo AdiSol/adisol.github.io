@@ -15,7 +15,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^6.3.0",
     "material-auto-rotating-carousel": "^3.0.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -24,7 +24,7 @@
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^6.2.2",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5",
     "react-swipeable-views": "^0.14.0",
     "styled-components": "^6.1.13",
     "uniqid": "^5.4.0",
@@ -38,7 +38,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
   "browserslist": {
@@ -54,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "^8.3.0",
