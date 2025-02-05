@@ -15,15 +15,14 @@ const CardContainer = styled.div`
 
   /* Mobile (Phones) */
   @media (max-width: 600px) { 
-    min-height: 500px; /* Smaller height for mobile */
+    min-height: 500px;
   }
 
-  /* Tablets (iPads, Zenbook Fold, etc.), ensuring it doesn't affect mobile */
+  /* Tablets */
   @media (min-width: 601px) and (max-width: 1024px) { 
     min-height: 700px;
-  }
 
-  /* Nest Hub */
+
   @media (min-width: 801px) and (max-width: 1024px) { 
     min-height: 470px;
   }
